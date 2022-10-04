@@ -53,3 +53,37 @@ const newarr = [...arr1, ...arr2, ...
     "12345"
 ];
 console.log(newarr);
+// same for objects
+
+// object must contain unnique keys, if it contains two identical keys, later one will be considered
+
+// OBJECT DESTRUCTURING
+const band = {
+    bandName: "Zepplin",
+    famousSong: "runaway",
+    founded: 1998,
+    country: "USA"
+}
+
+// const bandName = band.bandName;
+// const famousSong = band.famousSong; 
+
+const { bandName, famousSong, ...rest } = band;
+
+console.log(rest);
+
+// OBJECTS INSIDE ARRAY
+const users = [
+    { userId: 1, firstName: "Amit", lastName: "Kumar" },
+    { userId: 2, firstName: "Mohit", lastName: "Singh" },
+    { userId: 3, firstName: "Virat", lastName: "Bhati" },
+];
+
+for (let user of users) {
+    console.log(user.userId);
+}
+
+// NESTED DESTRUCTURING
+const [{ firstName }, user2, { lastName, userId: id }] = users;
+
+console.log(firstName, lastName, id);
